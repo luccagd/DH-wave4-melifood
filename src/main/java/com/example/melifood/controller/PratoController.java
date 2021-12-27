@@ -25,6 +25,13 @@ public class PratoController {
         return ResponseEntity.ok(pratosDTO);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<PratoDTO> getPratoPorId(@PathVariable Integer id) {
+        PratoDTO pratoDTO = PratoDTO.toDTO(service.getPratoPorId(id));
+
+        return ResponseEntity.ok(pratoDTO);
+    }
+
     @PostMapping
     public ResponseEntity<PratoDTO> adicionaPrato(@RequestBody PratoDTO pratoDTO, UriComponentsBuilder uriComponentsBuilder) {
         System.out.println(pratoDTO);

@@ -14,6 +14,16 @@ public class PratoRepository {
         return new ArrayList<>(pratos);
     }
 
+    public Prato getPratoPorId(Integer id) {
+        for (Prato prato : pratos) {
+            if (prato.getId() == id) {
+                return prato;
+            }
+        }
+
+        return null;
+    }
+
     public Prato adicionaPrato(Prato prato) {
         pratos.add(prato);
 

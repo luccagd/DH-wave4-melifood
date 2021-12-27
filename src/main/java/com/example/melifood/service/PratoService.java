@@ -17,6 +17,10 @@ public class PratoService {
         return repository.getPratos();
     }
 
+    public Prato getPratoPorId(Integer id) {
+        return repository.getPratoPorId(id);
+    }
+
     public Prato adicionaPrato(Prato prato) {
         return repository.adicionaPrato(prato);
     }

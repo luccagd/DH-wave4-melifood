@@ -34,9 +34,7 @@ public class PratoController {
 
     @PostMapping
     public ResponseEntity<PratoDTO> adicionaPrato(@RequestBody PratoDTO pratoDTO, UriComponentsBuilder uriComponentsBuilder) {
-        System.out.println(pratoDTO);
         Prato prato = service.adicionaPrato(PratoDTO.toEntity(pratoDTO));
-
 
         URI uri = uriComponentsBuilder.path("prato/{id}").buildAndExpand(prato.getId()).toUri();
         return ResponseEntity.created(uri).body(PratoDTO.toDTO(prato));
